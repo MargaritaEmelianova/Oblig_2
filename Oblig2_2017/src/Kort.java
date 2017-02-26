@@ -1,11 +1,11 @@
 
 public abstract  class Kort {
-private String navn;
-private int PIN;
+protected String navn;
+protected int PIN;
 private static int kortnummer;
 private boolean sperretKort;
 
-protected Kort(String navn, int pIN, boolean sperretKort) {
+protected Kort(String navn, int pIN) {
 	super();
 	this.setNavn(navn);
 	setPIN(pIN);
@@ -56,8 +56,7 @@ public String toString() {
 	return "Kort [navn=" + navn + ", PIN=" + PIN + ", sperretKort=" + sperretKort + "]";
 
 }
- public abstract boolean sjekkPIN();
-
+ public abstract boolean sjekkPIN(int pin);
 }
 
 
