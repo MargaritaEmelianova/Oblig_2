@@ -5,11 +5,9 @@ public class   Gjest extends Kort{
 
 	protected Gjest(String navn, int pIN) {
 		super(navn, 9999);
+
 		
-		setCreated(System.currentTimeMillis());
-	
-		
-		
+		setCreated(System.currentTimeMillis());	
 	}
 
 	public long getCreated() {
@@ -19,6 +17,7 @@ public class   Gjest extends Kort{
 	public void setCreated(long created) {
 		this.created = created;
 	}
+
 	@Override
 	public boolean sjekkPIN(int pin) {
 		long expires = created + 1000 * 60 * 60 * 24 * 7; 
