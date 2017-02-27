@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Ansatt extends Kort implements Konstanter {
+public class Ansatt extends Kort implements Konstanter, Comparable<Kort> {
 
 	private String fornavn;
 	private String etternavn;

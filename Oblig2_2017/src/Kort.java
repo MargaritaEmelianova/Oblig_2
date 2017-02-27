@@ -67,16 +67,19 @@ public boolean isSperret (){
 public String toString() {
 	
 	return "Kort [navn=" + navn + ", PIN=" + PIN + ", sperretKort=" + sperretKort + "]";
-
 }
  public abstract boolean sjekkPIN(int pin);
 
-
-public Object clone() throws java.lang.CloneNotSupportedException {
-	return super.clone();
-	
+@Override
+public Object clone(){
+	try{
+	Kort kortClone = (Kort) super.clone();
+	return kortClone;
+}
+catch (CloneNotSupportedException ex){
+	return null;
 }
 }
-
+}
 
 
