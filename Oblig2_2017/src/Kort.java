@@ -1,5 +1,6 @@
 
-public abstract  class Kort {
+public abstract  class Kort implements Cloneable, Comparable<Kort>{
+
 protected String navn;
 protected int PIN;
 private static int kortnummer;
@@ -11,7 +12,7 @@ protected Kort(String navn, int pIN) {
 	setPIN(pIN);
 	this.setSperretKort(sperretKort);
 	
-Kort.setKortnummer((int) (Math.random() * 15));
+Kort.setKortnummer((int) (Math.random()));
 	
 
 }
@@ -51,15 +52,31 @@ public boolean isSperret (){
 	return sperretKort;
 }
 
+
+	public int compareTo(Kort k) {
+		if (getNavn().compareTo(getNavn()) < 0)
+			
+		return -1;
+		
+		else
+			return 1;
+			
+		
+}
 @Override
 public String toString() {
+	
 	return "Kort [navn=" + navn + ", PIN=" + PIN + ", sperretKort=" + sperretKort + "]";
 
 }
  public abstract boolean sjekkPIN(int pin);
+
+
+public Object clone() throws java.lang.CloneNotSupportedException {
+	return super.clone();
+	
 }
-
-
+}
 
 
 
